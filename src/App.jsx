@@ -6,7 +6,6 @@ import List from "./List";
 class App extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       buttonClicked: "",
       assignments: [] /*Below this line, add the students state variable*/,
@@ -16,7 +15,6 @@ class App extends React.Component {
 
     this.handleButtonClicked = this.handleButtonClicked.bind(this);
     this.addAssignment = this.addAssignment.bind(this);
-    /*Uncomment the line below to bind the method*/
     this.addStudent = this.addStudent.bind(this);
     this.addGrade = this.addGrade.bind(this);
   }
@@ -27,14 +25,12 @@ class App extends React.Component {
     });
   }
 
-  /*Check out this addAssignment method*/
   addAssignment(assignmentName) {
     this.setState({
       assignments: this.state.assignments.concat(assignmentName)
     });
   }
 
-  /*Write an addStudent method here*/
   addStudent(studentName){
     this.setState({
       students: this.state.students.concat(studentName)
@@ -55,7 +51,6 @@ class App extends React.Component {
   render() {
     let tabChoice = <div />;
 
-    /*Uncomment below to render assignments*/
     if (this.state.buttonClicked === "assignments") {
       tabChoice = (
         <List
@@ -66,8 +61,6 @@ class App extends React.Component {
         />
       );
     }
-
-    /* Change below to render students*/
 
     if (this.state.buttonClicked === "students") {
       tabChoice = (
